@@ -22,7 +22,7 @@ To install the necessary dependencies for this project, run the following comman
 pip install -r requirements.txt
 ```
 
-	@@ -29,11 +30,41 @@ To use the car damage detection model, follow these steps:
+To use the car damage detection model, follow these steps:
 - Provide the path to the image you want to test
 - The script will output whether the car has damages or not
 
