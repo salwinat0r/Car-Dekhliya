@@ -14,7 +14,8 @@ An AI tool that streamlines your car insurance process by detecting damages with
 - [License](#license)
 
 <h2>Demo</h2>
-Link to Loom demonstration: [Click here]("https://www.loom.com/share/c258aae54fcd494ab2c041cc9923b5f9")
+Link to video demonstration: [click here](https://www.loom.com/share/c258aae54fcd494ab2c041cc9923b5f9)
+
 
 <h2>Background</h2>
 Car damages can be a major safety hazard if not detected and repaired in time. However, detecting damages in cars can be a tedious and time-consuming task for humans. This is where machine learning can be of great help. By training a machine learning model on a dataset of car images with damages, we can develop an automated system for detecting damages in cars.
