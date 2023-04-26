@@ -2,7 +2,7 @@
 <p align="center"><h1>Car Dekhliya</h1></p>
 
 An AI tool that streamlines your car insurance process by detecting damages with the most accuracy.
-
+[Video Demo](https://www.loom.com/share/c258aae54fcd494ab2c041cc9923b5f9)
 ## Table of Contents
 - [Background](#background)
 - [Installation](#installation)
