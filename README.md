@@ -14,7 +14,7 @@ An AI tool that streamlines your car insurance process by detecting damages with
 - [License](#license)
 
 <h2>Demo</h2>
-Link to video demonstration: https://www.loom.com/share/c258aae54fcd494ab2c041cc9923b5f9
+Watch the video demonstration: https://www.loom.com/share/c258aae54fcd494ab2c041cc9923b5f9
 
 
 <h2>Background</h2>
