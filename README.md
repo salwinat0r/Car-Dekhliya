@@ -84,6 +84,7 @@ This route returns the severity of the damage into 3 classes, `minor`, `moderate
 - [x] Percentage value of damage on a vechicle
 - [ ] Generalize the model for any damaged object
 - [ ] Add a ChatGPT powered chatbot that assists the customer throughout the process
+- [ ] Fire UI
 
 
 <h2>Contributing</h2>

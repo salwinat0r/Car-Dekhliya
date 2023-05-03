@@ -13,9 +13,20 @@ from werkzeug.utils import secure_filename
 from fastapi.responses import JSONResponse
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.middleware.cors import CORSMiddleware
+
 
 model = get_yolov5()
 app = FastAPI(title="Car Dekhliya")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins="http://127.0.0.1:3000/",
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # templates = Jinja2Templates(directory="backend/static")
 
@@ -32,6 +43,7 @@ async def detect_damage_return_json_result(file: UploadFile = File(...)):
     results = model(get_image_from_bytes(input_image))
     detect_res = results.pandas().xyxy[0].to_json(orient="records")
     detect_res = json.loads(detect_res)
+    # print(detect_res)
     return {"result": detect_res}
 
 @app.post("/object-to-img")
