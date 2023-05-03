@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 
 
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [jsonData, setjsonData] = useState(null);
 
   // changes the state of the image file
    const fileChangeHandler = (e) => {
@@ -14,6 +15,7 @@ function App() {
 }
 // updates the file in the formdata
   const handleSubmit = (e) => {
+    e.preventDefault();
     const formData = new FormData;
     formData.append(
       "file",
@@ -27,8 +29,19 @@ function App() {
     body: formData
   };
 
+  fetch("http://127.0.0.1:8000/severity", requestOptions)
+  .then(response => response.json())
+  .then(data => {setjsonData(data.result);
+    console.log(data.result.severity);
+  })
+  .catch(error => console.log(error));
+
   fetch("http://127.0.0.1:8000/object-to-json", requestOptions)
-  .then(response => response.json())    
+  .then(response => response.json())
+  .then(data => {setjsonData(data.result);
+    console.log(data.result[0].name);
+  })
+  .catch(error => console.log(error));
 };
   return (
     <div className="App">
