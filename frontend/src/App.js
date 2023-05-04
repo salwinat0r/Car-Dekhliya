@@ -6,6 +6,7 @@ import React , {useState, useEffect} from 'react';
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [jsonData, setjsonData] = useState(null);
+  const [imageURL, setImageURL] = useState(null);
 
   // changes the state of the image file
    const fileChangeHandler = (e) => {
@@ -42,6 +43,16 @@ function App() {
     console.log(data.result[0].name);
   })
   .catch(error => console.log(error));
+
+  fetch("http://127.0.0.1:8000/object-to-img", requestOptions)
+  .then(response => response.blob())
+      .then(blob => {
+        const objectUrl = URL.createObjectURL(blob);
+        setImageURL(objectUrl);
+    // console.log(data.result);
+  })
+  .catch(error => console.log(error));
+
 };
   return (
     <div className="App">
@@ -54,6 +65,7 @@ function App() {
           </fieldset>
           <button onClick={handleSubmit}>Upload</button>
         </form>
+        {imageURL && <img src={imageURL} alt="Uploaded Image" />}
       </header>
     </div>
   );
